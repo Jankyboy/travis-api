@@ -152,7 +152,9 @@ describe Travis::API::V3::Services::Subscriptions::Create, set_app: true, billin
             '@href' => "/v3/org/#{organization.id}",
             'id' => organization.id,
             'vcs_type' => organization.vcs_type,
-            'login' => 'travis'
+            'login' => 'travis',
+            'name' => organization.name,
+            'ro_mode' => true
           },
           'payment_intent' => nil,
           'discount' => nil

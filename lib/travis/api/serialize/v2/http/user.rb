@@ -1,5 +1,4 @@
 require 'travis/api/serialize/formats'
-require 'travis/github/oauth'
 require 'travis/remote_vcs/user'
 require 'travis/remote_vcs/response_error'
 
@@ -55,7 +54,7 @@ module Travis
               end
 
             def check_scopes
-              return Github::Oauth.correct_scopes?(user) if user.github?
+              # return Github::Oauth.correct_scopes?(user) if user.github?
 
               ::Travis::RemoteVCS::User.new.check_scopes(user_id: user.id)
             rescue ::Travis::RemoteVCS::ResponseError
